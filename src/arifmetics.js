@@ -1,9 +1,9 @@
 let a = 5;
-let b = 10;
+const b = 10;
 const c = '2';
 
 console.log('Arithmetic Operations. Same type:');
-console.log(a + b); 
+console.log(a + b);
 console.log(a - b);
 console.log(a * b);
 console.log(b / a);
@@ -19,10 +19,10 @@ console.log(a ** c);
 console.log('Arithmetic Operations. Miscellaneous:');
 console.log(++a);
 console.log(--a);
-console.log(a+=b);
-console.log(a-=b);
-console.log(a*=b);
-console.log(a/=b);
+console.log(a += b);
+console.log(a -= b);
+console.log(a *= b);
+console.log(a /= b);
 a = b;
 console.log(a);
 a = c;
