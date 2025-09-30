@@ -1,1 +1,1 @@
-# kushnirCourseWork
+# QA-AUTOMATION-TYPESCRIPT-2
