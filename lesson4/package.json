@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "eslint": "^9.35.0",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2"
+  },
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "recommended config from me for programming on a JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kushmih/kushnirCourseWork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kushmih/kushnirCourseWork/issues"
+  },
+  "homepage": "https://github.com/kushmih/kushnirCourseWork#readme"
+}
