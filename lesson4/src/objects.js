@@ -21,3 +21,7 @@ trainedDog.hobbies = trainedDog.hobbies.filter(
 );
 
 console.log('Хобі тренованого пса:', trainedDog.hobbies);
+trainedDog.sit = function() {
+    console.log('Пес сідає за командою!');
+};
+trainedDog.sit();
