@@ -1,32 +1,50 @@
-const person = {
-    firstName: 'Іван',
-    lastName: 'Петренко',
-    address: {
-        city: 'Львів',
-        street: 'Зелена',
-        number: 25
+const witcher = {
+    firstName: 'Geralt',
+    lastName: 'of Rivia',
+    goldBalance: 0,
+    activeContracts: {
+        Striga: { reward: 100, status: 'active' },
+        Kikimora: { reward: 80, status: 'active' },
+        Leshen: { reward: 200, status: 'active' }
+    },
+    currentLocation: {
+        region: 'Kaedwen',
+        city: 'Kaer Morhen'
     },
 
-    // Гетер для повного імені
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+    get getGoldBalance() {
+        return this.goldBalance;
     },
 
-    // Сетер для оновлення імені
-    set fullName(value) {
-        const parts = value.split(' ');
-        this.firstName = parts[0];
-        this.lastName = parts[1] || '';
+    set changeGoldBalance(value) {
+        this.goldBalance += value;
     },
 
-    // Метод, що виводить коротку інформацію
-    getSummary() {
-        return `👤 ${this.fullName}, проживає у місті ${this.address.city} на вулиці ${this.address.street}, ${this.address.number}.`;
+    get getActiveContracts() {
+        return this.activeContracts;
+    },
+
+    witcherSummary() {
+        return `${this.firstName} ${this.lastName} знаходиться в ${this.currentLocation.city}, ${this.currentLocation.region}. Поточний баланс золота: ${this.goldBalance}. Активні контракти: ${Object.keys(this.activeContracts).join(', ')}.`;
+    },
+
+    closeContract(contract) {
+        this.changeGoldBalance = this.activeContracts[contract].reward;
+        delete this.activeContracts[contract];
+    },
+
+    contractSummary() {
+        let sum = 0;
+        for (const key in this.activeContracts) {
+            sum += this.activeContracts[key].reward;
+        }
+        return sum;
     }
 };
 
-// Використання гетерів і сетерів
-console.log(person.getSummary());
-person.fullName = 'Олена Шевченко';
-console.log('Оновлене імʼя:', person.fullName);
-console.log(person.getSummary());
+console.log(witcher.witcherSummary());
+
+witcher.closeContract('Striga');
+console.log('Баланс золота після закриття контракту зі Стригою:', witcher.getGoldBalance);
+console.log('Контракти після закриття контракту зі Стригою:', witcher.getActiveContracts);
+console.log('Сумарна винагорода за активні контракти:', witcher.contractSummary());
