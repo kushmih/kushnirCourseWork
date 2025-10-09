@@ -1,17 +1,12 @@
 // Та сама логіка, але через стрілкову функцію
 const sumArray = (arr) => {
-    return arr.reduce((acc, value) => {
-        if (typeof value === 'number') {
-            return acc + value;
-        } else {
-            console.log(`Пропускаю нечислове значення: ${value}`);
-            return acc;
-        }
-    }, 0);
+    let sum = typeof arr[0] === 'string' ? '' : 0;
+    arr.forEach(element => sum += element);
+    return sum;
 };
 
-const nums = [5, 15, 25, 35];
-const words = ['JS', ' ', 'rules', '!'];
+const numbers = [10, 20, 30, 40, 50];
+const strings = ['A', 'B', 'C', 'D'];
 
-console.log('Сума чисел (arrow):', sumArray(nums));
-console.log('Робота з рядками (arrow):', sumArray(words));
+console.log('Сума чисел:', sumArray(numbers));
+console.log('Сума рядків:', sumArray(strings));
