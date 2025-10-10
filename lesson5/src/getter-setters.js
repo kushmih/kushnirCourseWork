@@ -29,7 +29,7 @@ const witcher = {
     },
 
     closeContract(contract) {
-        this.changeGoldBalance = this._activeContracts[contract].reward;
+        this.goldBalance = this._activeContracts[contract].reward;
         delete this._activeContracts[contract];
     },
 
@@ -45,6 +45,6 @@ const witcher = {
 console.log(witcher.witcherSummary());
 
 witcher.closeContract('Striga');
-console.log('Баланс золота після закриття контракту зі Стригою:', witcher.getGoldBalance);
+console.log('Баланс золота після закриття контракту зі Стригою:', witcher.goldBalance);
 console.log('Контракти після закриття контракту зі Стригою:', witcher.activeContracts);
 console.log('Сумарна винагорода за активні контракти:', witcher.contractSummary());
