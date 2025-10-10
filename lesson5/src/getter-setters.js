@@ -1,8 +1,8 @@
 const witcher = {
-    firstName: 'Geralt',
-    lastName: 'of Rivia',
-    goldBalance: 0,
-    activeContracts: {
+    _firstName: 'Geralt',
+    _lastName: 'of Rivia',
+    _goldBalance: 0,
+    _activeContracts: {
         Striga: { reward: 100, status: 'active' },
         Kikimora: { reward: 80, status: 'active' },
         Leshen: { reward: 200, status: 'active' }
@@ -12,31 +12,31 @@ const witcher = {
         city: 'Kaer Morhen'
     },
 
-    get getGoldBalance() {
-        return this.goldBalance;
+    get goldBalance() {
+        return this._goldBalance;
     },
 
-    set changeGoldBalance(value) {
-        this.goldBalance += value;
+    set goldBalance(value) {
+        this._goldBalance += value;
     },
 
-    get getActiveContracts() {
-        return this.activeContracts;
+    get activeContracts() {
+        return this._activeContracts;
     },
 
     witcherSummary() {
-        return `${this.firstName} ${this.lastName} знаходиться в ${this.currentLocation.city}, ${this.currentLocation.region}. Поточний баланс золота: ${this.goldBalance}. Активні контракти: ${Object.keys(this.activeContracts).join(', ')}.`;
+        return `${this._firstName} ${this._lastName} знаходиться в ${this.currentLocation.city}, ${this.currentLocation.region}. Поточний баланс золота: ${this.goldBalance}. Активні контракти: ${Object.keys(this._activeContracts).join(', ')}.`;
     },
 
     closeContract(contract) {
-        this.changeGoldBalance = this.activeContracts[contract].reward;
-        delete this.activeContracts[contract];
+        this.changeGoldBalance = this._activeContracts[contract].reward;
+        delete this._activeContracts[contract];
     },
 
     contractSummary() {
         let sum = 0;
-        for (const key in this.activeContracts) {
-            sum += this.activeContracts[key].reward;
+        for (const key in this._activeContracts) {
+            sum += this._activeContracts[key].reward;
         }
         return sum;
     }
@@ -46,5 +46,5 @@ console.log(witcher.witcherSummary());
 
 witcher.closeContract('Striga');
 console.log('Баланс золота після закриття контракту зі Стригою:', witcher.getGoldBalance);
-console.log('Контракти після закриття контракту зі Стригою:', witcher.getActiveContracts);
+console.log('Контракти після закриття контракту зі Стригою:', witcher.activeContracts);
 console.log('Сумарна винагорода за активні контракти:', witcher.contractSummary());
