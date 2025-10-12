@@ -20,4 +20,4 @@ async function fetchData() {
     }
 }
 
-fetchData().catch(err => console.error('Фінальна помилка:', err.message));
+fetchData();
