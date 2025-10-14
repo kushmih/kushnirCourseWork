@@ -13,4 +13,4 @@ function processData(data) {
     return `Усього записів: ${data.length}`;
 }
 
-getData('https://jsonplaceholder.typicode.com/posts');
+getData('https://jsonplaceholder.typicode.com/posts').then();
