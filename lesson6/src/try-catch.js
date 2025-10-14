@@ -5,6 +5,8 @@ async function fetchData() {
     try {
         console.log('Пробуємо основний ресурс...');
         const response = await fetch(mainUrl);
+        if (!response.ok)
+            throw new Error('помилка при отриманні відповіді');
         const data = await response.json();
         console.log('Отримані дані з основного ресурсу:', data);
     } catch (error) {
