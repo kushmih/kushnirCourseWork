@@ -4,7 +4,7 @@ function sumArray(arr: (number | string)[]): number | string {
         arr.forEach(element => sum += String(element));
         return sum;
     } else {
-        let sum = 0;        
+        let sum = 0;
         arr.forEach(element => sum += Number(element));
         return sum;
     }
