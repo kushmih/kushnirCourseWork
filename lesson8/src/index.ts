@@ -11,7 +11,7 @@ async function main() : Promise<void> {
 
         console.log('\n Короткі описи користувачів:');
         const summaries = users.map(user => new UserSummary(user));
-        summaries.slice(0, 3).forEach(summary => console.log(summary.getSummary()));
+        summaries.forEach(summary => console.log(summary.getSummary()));
 
         console.log('\n Абстракція та композиція:');
         const address = new AddressInfo('Bandery street 1', 'Lviv');
