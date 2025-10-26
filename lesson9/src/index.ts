@@ -1,4 +1,4 @@
-import { Goblin } from './Goblin';
+import { Goblin } from './goblin';
 import { GoblinArcher}  from './goblin-archer';
 import { turn } from './turn-handler';
 

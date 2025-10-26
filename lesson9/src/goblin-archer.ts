@@ -1,4 +1,4 @@
-import { Goblin } from './Goblin';
+import { Goblin } from './goblin';
 
 export class GoblinArcher extends Goblin {
     protected name = 'Goblin archer';
